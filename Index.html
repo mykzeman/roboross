@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RobotRoss</title>
+    <style>
+.title,.menu,.draw{
+    border: 1px solid black;
+    width: auto;
+    height: auto;
+    
+    
+}
+#canvas{
+    border: 5px solid black;
+    width: 400px;
+    height: 400px;
+}
+    </style>
+  
+</head>
+<script src="js/setup.js"></script>
+<body>
+    <div class="title"><h1>RobotRoss</h1></div>
+    <div class="menu">
+<p>Welcome to RobotRoss! The world's first speech to art web application!</p>
+<div class="options"><div id="instructions">Please use the options and mode buttons to control the drawing. Press the record buttons to start drawing. Here is the manual, <a href="https://docs.google.com/document/d/1B87BVl7SGmXUvrwKbjfIh403Q3YyrV2B2ZtxMEt-7w0/edit?usp=sharing">Help</a></div>
+<p>Fill Colour</p><button type="button" onclick='hear("str",1)'>Record</button>
+<p>Line Colour</p><button type="button" onclick='hear("str",2)'>Record</button>
+<p>Canvas width</p><button type="button" onclick='hear("num",1)'>Record</button>
+ <p>Canvas height</p><button type="button" onclick='hear("num",2)' >Record</button>
+ <p>X Postion 1</p><button type="button" onclick='hear("num",3)'>Record</button>
+ <p>Y Postion 1</p><button type="button" onclick='hear("num",4)'>Record</button>
+ <p>X Postion 2</p><button type="button" onclick='hear("num",5)'>Record</button>
+ <p>Y Postion 2</p><button type="button" onclick='hear("num",6)'>Record</button>
+ <br>
+    </div>
+    <div class="draw" ><p>Mode</p> <div class="mode"><select id="mode"><option value="tool" selected>Tool</option><option value="utility">Utility</option></select><button type="button" onclick='hear(document.getElementById("mode").selectedIndex.value);'>Record</button></div>
+  <p>Canvas</p>  <canvas id="canvas" width="400" height="400" ></canvas>
+<br>
+<br>
+<br>
+<p id="record">Not recording...</p>
+</div>
+ 
+</body>
+
+</html>
